@@ -11,8 +11,10 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "jsx": "preserve", // JSX を .tsx ファイルに残す (Next.js が処理)
+    "incremental": true, // 増分コンパイルを有効化
+    "strictNullChecks": true, // null チェックを厳格に
+    "noImplicitAny": true, // any 型の使用を禁止 (できる限り)
     "plugins": [
       {
         "name": "next"
@@ -22,6 +24,13 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
